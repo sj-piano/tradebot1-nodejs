@@ -1,0 +1,10 @@
+{
+  "name": "tradebot-nodejs",
+  "scripts": {
+    "start": "node runTradeBot.js",
+	"test": "mocha"
+  },
+  "dependencies": {
+    "mocha": "^8.2.1"
+  }
+}
