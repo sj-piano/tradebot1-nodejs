@@ -1,5 +1,5 @@
-let Bar = require('../bar.js').Bar;
-let TradeBot = require('../src/index.js').TradeBot;
+let Bar = require('../bar').Bar;
+let TradeBot = require('../src').TradeBot;
 
 global.Bar = Bar;
 global.TradeBot = TradeBot;
