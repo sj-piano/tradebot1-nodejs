@@ -1,4 +1,3 @@
-//let fetch = require('fetch');
 const fetch = require('node-fetch');
 
 
@@ -10,17 +9,20 @@ class TradeBot {
 	}
 
 
-	async z() {
-		try {
-			console.log('Location: z');
-			return 'z';
-		} catch(err) {
-			throw(err);
-		}
+	async getGasPriceETH() {
+		const url = `https://api.stg.deversifi.com/v1/trading/r/getGasPrice`;
+		const response = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Accept": "application/json",
+				"Content-Type": "application/json",
+			},
+		});
+		return response.json();
 	}
 
 
-	async makeRequest() {
+	async getOrderbookETHUSD() {
 		const params = {
 			Symbol: "tETHUSD",
 			Precision: "P0",
@@ -29,8 +31,8 @@ class TradeBot {
 		const response = await fetch(url, {
 			method: "GET",
 			headers: {
-			"Accept": "application/json",
-			"Content-Type": "application/json",
+				"Accept": "application/json",
+				"Content-Type": "application/json",
 			},
 		});
 		return response.json();
