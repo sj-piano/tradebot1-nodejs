@@ -1,22 +1,23 @@
 let assert = require('assert');
+let log = console.log;
 
 
 describe('TradeBot', function() {
-	describe('#test_z', function() {
-		it('should return "z".', async function() {
-			tb = new TradeBot();
-			x = await tb.z();
-			assert.equal(x, 'z');
-		});
-	});
-});
 
-
-describe('TradeBot2', function() {
 	describe('#test_name', function() {
 		it('should return "TradeBot".', function() {
 			tb = new TradeBot();
 			assert.equal(tb.name, 'TradeBot');
 		});
 	});
+
+	describe('#test_getGasPrice', function() {
+		it('should return a number.', async function() {
+			t = new TradeBot();
+			x = await t.makeRequest();
+			log(x);
+			//assert.equal(x, 'z');
+		});
+	});
+
 });
