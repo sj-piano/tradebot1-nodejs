@@ -5,7 +5,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "got": "^11.8.0",
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "node-fetch": "^2.6.1"
   }
 }
