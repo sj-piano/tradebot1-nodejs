@@ -5,6 +5,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "lodash": "^4.17.20",
     "mocha": "^8.2.1",
     "node-fetch": "^2.6.1"
   }
