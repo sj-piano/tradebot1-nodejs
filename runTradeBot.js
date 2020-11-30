@@ -1,4 +1,4 @@
-const got = require('got');
+
 
 
 console.log('test');
@@ -18,19 +18,18 @@ process.on('unhandledRejection', (error, p) => {
 //Promise.reject(new Error('not OK'))
 
 
-let dest = 'https://api.deversifi.com/bfx/v2/book/tETHUSD/R0';
 
 
 foo();
 
 async function foo() {
 	try {
-		const response = await got(dest);
-		console.log(response.body);
 
 
 	} catch(err) {
 		console.log(err);
-		console.log(err.response.body);
+		process.exit(0);
+		//console.log(err.response.body);
+		console.log('end');
 	}
 }
