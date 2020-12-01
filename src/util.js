@@ -14,21 +14,23 @@ let createLoggerArgsSchema = Joi.object({
 	name: Joi.string().required(),
 	level: Joi.string().required().valid(...constants.logLevels),
 	timestamp: Joi.boolean().default(false),
-	filepath: Joi.string().default(''),
 });
+
+
+
+
+// Functions
 
 
 module.exports.createLogger = async function (args) {
 	const {error, value} = createLoggerArgsSchema.validate(args);
 	if (error) { throw Error(error) };
-	let {name, level, timestamp, filepath} = value;
+	let {name, level, timestamp} = value;
 	/* NOTES:
 	- Sample output:
 	2020-12-01T13:30:54.484Z INFO    [TradeBot] TradeBot initialised.
 	2020-12-01T13:30:54.650Z INFO    [TradeBot] bestBid: 170, bestAsk: 195
 	- Logs to console.
-	- If a filepath is supplied, then the log will also be written to the designated file. [NOT IMPLEMENTED YET]
-	-- The log file is rotated daily.
 	*/
 	// Note: If an object is passed in to be logged, e.g. logger.info({foo}), then it will be stored in options.meta. options.message will be empty.
 	function buildLogString(options, loggerName) {
@@ -75,8 +77,6 @@ module.exports.createLogger = async function (args) {
 			}
 		})
 	];
-	// If a filepath is specified, create a transport that writes to this file.
-	// [NOT IMPLEMENTED YET]
 	let logger = new (winston.Logger)({
 		transports: transports,
 		exitOnError: false,
