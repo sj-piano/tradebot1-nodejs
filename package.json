@@ -1,12 +1,17 @@
 {
   "name": "tradebot-nodejs",
   "scripts": {
-    "start": "node runTradeBot.js",
+    "start": "node runTradeBot.js --logLevel=info --timestamp",
     "test": "mocha"
   },
   "dependencies": {
+    "big.js": "3.1.3",
+    "commander": "4.1.1",
+    "joi": "^17.3.0",
     "lodash": "^4.17.20",
     "mocha": "^8.2.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "winston": "2.4.3",
+    "winston-daily-rotate-file": "3.10.0"
   }
 }
