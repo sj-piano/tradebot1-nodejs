@@ -3,15 +3,15 @@
 
 ### TESTED UNDER:
 
-Virtual machine details:
-- Ubuntu 20.04 (LTS) x64
--- 2 GB RAM
--- 1 CPU
--- 50 GB SSD Disk
--- 2 TB transfer
+Virtual machine details:  
+- Ubuntu 20.04 (LTS) x64  
+-- 2 GB RAM  
+-- 1 CPU  
+-- 50 GB SSD Disk  
+-- 2 TB transfer  
 
-node version: 10.19.0
-npm version: 6.14.4
+node version: 10.19.0  
+npm version: 6.14.4  
 
 
 ### CONTROLS
