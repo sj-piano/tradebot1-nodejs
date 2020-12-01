@@ -84,3 +84,8 @@ module.exports.createLogger = async function (args) {
 	logger.listOfTransports = transports;
 	return logger;
 }
+
+
+module.exports.getRandomFloat = function (min, max) {
+	return Math.random() * (max - min) + min;
+}
